@@ -1,0 +1,10 @@
+[user]
+	name = Jochem Arends
+	email = jwn.arends@gmail.com
+[core]
+	editor = nvim
+[credential]
+	helper = store
+[alias]
+	ci = commit
+	st = status
