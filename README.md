@@ -15,7 +15,6 @@ dnf install stow
 ```bash
 git clone https://github.com/jochemarends/dotfiles.git
 cd dotfiles
-dnf install stow
 stow .
 ```
 
