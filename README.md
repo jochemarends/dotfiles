@@ -1,6 +1,16 @@
 # Dotfiles
 
-My personal dotfiles, install using the following commands:
+My personal dotfiles
+
+## Prerequisites
+* Git
+* GNU Stow
+
+```bash
+dnf install git
+dnf install stow
+```
+## Installation
 
 ```bash
 $ git clone https://github.com/jochemarends/dotfiles.git
