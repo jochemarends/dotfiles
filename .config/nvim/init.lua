@@ -65,3 +65,10 @@ require'nvim-treesitter.configs'.setup {
 }
 
 vim.cmd("colorscheme jellybeans")
+
+-- mountaineer
+-- lunaperche
+-- hybrid_reverse
+-- paramount
+-- jellybeans
+
