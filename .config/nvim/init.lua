@@ -64,7 +64,8 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.cmd("colorscheme jellybeans")
+vim.cmd("colorscheme hybrid_reverse")
+vim.opt.termguicolors = true
 
 -- mountaineer
 -- lunaperche
