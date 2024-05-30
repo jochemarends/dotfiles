@@ -64,7 +64,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.cmd("colorscheme hybrid_reverse")
+vim.cmd("colorscheme jellybeans")
 vim.opt.termguicolors = true
 
 -- mountaineer
