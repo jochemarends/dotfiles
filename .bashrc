@@ -36,3 +36,6 @@ scp_from_rpi () {
     scp jochemarends@192.168.1.249:$1 $2
 }
 
+export MPLBACKEND=GTK4Agg
+
+eval "$(zoxide init bash)"
