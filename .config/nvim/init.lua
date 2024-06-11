@@ -34,6 +34,9 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     "Yazeed1s/minimal.nvim",
     "rebelot/kanagawa.nvim",
+    "mountain-theme/Mountain",
+    "blazkowolf/gruber-darker.nvim",
+    "m4xshen/autoclose.nvim",
 })
 
 -- treesitter
@@ -64,7 +67,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.cmd("colorscheme jellybeans")
+vim.cmd("colorscheme lunaperche")
 vim.opt.termguicolors = true
 
 -- mountaineer
@@ -72,4 +75,5 @@ vim.opt.termguicolors = true
 -- hybrid_reverse
 -- paramount
 -- jellybeans
+-- pablo
 
