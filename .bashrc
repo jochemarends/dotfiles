@@ -39,3 +39,5 @@ scp_from_rpi () {
 export MPLBACKEND=GTK4Agg
 
 eval "$(zoxide init bash)"
+
+export PATH="/home/jochemarends/.local/share/solana/install/active_release/bin:$PATH"
