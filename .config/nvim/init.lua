@@ -37,12 +37,17 @@ require("lazy").setup({
     "mountain-theme/Mountain",
     "blazkowolf/gruber-darker.nvim",
     "m4xshen/autoclose.nvim",
+    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+    {'neovim/nvim-lspconfig'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/nvim-cmp'},
+    {'L3MON4D3/LuaSnip'},
 })
 
 -- treesitter
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "latex", "cpp", "c", "lua", "vim", "vimdoc", "query" },
+  ensure_installed = { "javascript", "latex", "cpp", "c", "lua", "vim", "vimdoc", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -52,7 +57,7 @@ require'nvim-treesitter.configs'.setup {
   auto_install = true,
 
   -- List of parsers to ignore installing (or "all")
-  ignore_install = { "javascript" },
+  -- ignore_install = { "javascript" },
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -67,7 +72,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.cmd("colorscheme lunaperche")
+require('lsp-zero')
+require('lspconfig').intelephense.setup({})
+
+vim.cmd("colorscheme jellybeans")
 vim.opt.termguicolors = true
 
 -- mountaineer
