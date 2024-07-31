@@ -16,7 +16,11 @@ return {
                 -- see :help lsp-zero-keybindings
                 -- to learn the available actions
                 lsp.default_keymaps({buffer = bufnr})
+                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
+                vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end)
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
                 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
+                vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
             end)
 
             require('mason').setup({})
