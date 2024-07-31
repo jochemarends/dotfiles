@@ -1,11 +1,15 @@
 return {
+    {{"rose-pine/neovim", name = "rose-pine"}},
+    {{"rebelot/kanagawa.nvim"}},
+    {{"folke/tokyonight.nvim"}},
+    {{"EdenEast/nightfox.nvim"}},
     {
         "rafi/awesome-vim-colorschemes",
         config = function()
             vim.opt.termguicolors = true
-            vim.cmd("colorscheme jellybeans")
+            vim.cmd("colorscheme terafox")
         end,
-    }
+    },
 }
 
 -- mountaineer
