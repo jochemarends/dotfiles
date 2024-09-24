@@ -41,3 +41,6 @@ export MPLBACKEND=GTK4Agg
 eval "$(zoxide init bash)"
 
 export PATH="/home/jochemarends/.local/share/solana/install/active_release/bin:$PATH"
+export PATH=/usr/local/tsserver:$PATH
+export TERM="xterm-256color"
+export PATH=$PATH:/usr/local/go/bin
