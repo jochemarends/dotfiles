@@ -19,6 +19,7 @@ return {
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
                 vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end)
                 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
+                vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end)
                 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
                 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
             end)
@@ -27,7 +28,7 @@ return {
             require('mason-lspconfig').setup({
                 -- Replace the language servers listed here 
                 -- with the ones you want to install
-                ensure_installed = {'gopls', 'clangd', 'tsserver', 'rust_analyzer'},
+                ensure_installed = { 'sqls', 'gopls', 'clangd', 'tsserver', 'rust_analyzer'},
                 handlers = {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})

@@ -4,10 +4,18 @@ return {
     {{"folke/tokyonight.nvim"}},
     {{"EdenEast/nightfox.nvim"}},
     {
+        "vague2k/vague.nvim",
+        config = function()
+            require("vague").setup({
+                -- optional configuration here
+            })
+        end
+    },
+    {
         "rafi/awesome-vim-colorschemes",
         config = function()
             vim.opt.termguicolors = true
-            vim.cmd("colorscheme terafox")
+            vim.cmd("colorscheme carbonfox")
         end,
     },
 }
