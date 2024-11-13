@@ -44,3 +44,5 @@ export PATH="/home/jochemarends/.local/share/solana/install/active_release/bin:$
 export PATH=/usr/local/tsserver:$PATH
 export TERM="xterm-256color"
 export PATH=$PATH:/usr/local/go/bin
+export HISTCONTROL=ignoreboth:erasedups
+source /usr/share/git/completion/git-completion.bash

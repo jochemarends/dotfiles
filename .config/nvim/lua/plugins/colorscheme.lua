@@ -15,7 +15,7 @@ return {
         "rafi/awesome-vim-colorschemes",
         config = function()
             vim.opt.termguicolors = true
-            vim.cmd("colorscheme carbonfox")
+            vim.cmd("colorscheme lunaperche")
         end,
     },
 }
