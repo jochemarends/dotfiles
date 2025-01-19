@@ -9,6 +9,7 @@ return {
             {'hrsh7th/nvim-cmp'},
             {'L3MON4D3/LuaSnip'},
         },
+
         config = function()
             local lsp = require('lsp-zero')
 
@@ -28,10 +29,22 @@ return {
             require('mason-lspconfig').setup({
                 -- Replace the language servers listed here 
                 -- with the ones you want to install
-                ensure_installed = { 'gopls', 'clangd', 'tsserver' },
+                ensure_installed = { 'gopls', 'clangd' },
                 handlers = {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
+                    end,
+                    ["kotlin_language_server"] = function()
+                        require('lspconfig').kotlin_language_server.setup({
+                            root_dir = function(fname)
+                                return vim.loop.cwd()
+                            end,
+                            cmd = { "kotlin-language-server" },  -- Specify the command to run the Kotlin language server
+                            filetypes = { "kotlin", "kt", "kts" },
+                            settings = {
+                                -- You can add specific settings for Kotlin here if needed
+                            },
+                        })
                     end,
                 },
             })
