@@ -14,3 +14,4 @@ vim.opt.tabstop = 4
 
 vim.opt.clipboard = "unnamedplus"
 
+vim.diagnostic.config({ virtual_text = true })

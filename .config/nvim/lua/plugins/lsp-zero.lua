@@ -22,13 +22,17 @@ return {
                 vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end)
                 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
                 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
+
+                if vim.lsp.inlay_hint then
+                  vim.lsp.inlay_hint.enable(true, { 0 })
+                end
             end)
 
             require('mason').setup({})
             require('mason-lspconfig').setup({
                 -- Replace the language servers listed here 
                 -- with the ones you want to install
-                ensure_installed = { 'pylsp', 'gopls', 'clangd', 'tsserver' },
+                ensure_installed = { 'clangd', 'pylsp' },
                 handlers = {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
