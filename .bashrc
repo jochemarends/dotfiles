@@ -1,53 +1,24 @@
-# .bashrc
+#
+# ~/.bashrc
+#
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+set -o emacs
 
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
-fi
-unset rc
+# Enable clearing the screen using ^L while in vi mode 
+bind -m vi-insert 'Control-l: clear-screen'
 
-set -o vi
-
-alias ssh_rpi='ssh jochemarends@192.168.1.249'
-
-scp_rpi () {
-    scp $1 jochemarends@192.168.1.249:$2
-}
-
-scp_from_rpi () {
-    scp jochemarends@192.168.1.249:$1 $2
-}
-
-export MPLBACKEND=GTK4Agg
-
+alias vi='nvim'
 eval "$(zoxide init bash)"
 
-export PATH="/home/jochemarends/.local/share/solana/install/active_release/bin:$PATH"
-export PATH=/usr/local/tsserver:$PATH
-export TERM="xterm-256color"
-export PATH=$PATH:/usr/local/go/bin
-export HISTCONTROL=ignoreboth:erasedups
 source /usr/share/git/completion/git-completion.bash
 
-alias vi="nvim"
-alias vim="nvim"
-
 . "$HOME/.cargo/env"
+
+export PATH="/home/jochem/.local/share/solana/install/active_release/bin:$PATH"
